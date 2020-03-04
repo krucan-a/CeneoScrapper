@@ -1,14 +1,14 @@
-PP2-2
-Step 1 - 
-opinie
-identyfikator
-autor
-rekomendacja
-gwiazdki
-potwierdzona zakupem
-data zakupu
-przydatna
-nieprzydatna
-treść
-wady
-zalety
+## Etap 1 - pobranie składowych pojedynczej opinii
+- opinia
+- identyfikator
+- autor
+- rekomendacja
+- gwiazdki
+- potwierdzona zakupem
+- data wystawienia
+- data zakupu
+- przydatna
+- nieprzydatna
+- treść
+- wady
+- zalety
