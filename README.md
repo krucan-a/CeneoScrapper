@@ -1,6 +1,6 @@
 ## Etap 1 - pobranie składowych pojedynczej opinii
 - opinia: li.review-box
-- identyfikator: li.review-box["data-entry-id]
+- identyfikator: li.review-box["data-entry-id"]
 - autor: div.reviewer-name-line
 - rekomendacja: div.product-review-summary  >  em
 - gwiazdki: span.review-score-count
