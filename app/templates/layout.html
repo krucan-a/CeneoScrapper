@@ -21,7 +21,7 @@
         <nav class="container navbar navbar-expand-lg navbar-dark bg-dark sticky-top rounded">
             <div class="">
                 <a class="navbar-brand" href="./"> Strona główna</a>
-                <a class="navbar-brand" href="./extract"> Pobierz opinie</a>
+                <a class="navbar-brand" href="./extract"> Ekstrakcja opinii</a>
                 <a class="navbar-brand" href="./products"> Lista produktów</a>
                 <a class="navbar-brand" href="./about"> O projekcie</a>
             </div>
@@ -30,6 +30,9 @@
         <div class="container" style="padding-top: 50px; padding-bottom: 100px;">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
+                    {% block body %}
+                        <p>Ala ma kota</p>
+                    {% endblock %}
                 </div>
             </div>
         </div>
