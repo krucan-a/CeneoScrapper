@@ -36,3 +36,5 @@ struktura aplikacji /CeneoScraper
 /layout.html
 /requirements.txt
 /README.md /.venv
+widoki (Jinja)
+routingi
