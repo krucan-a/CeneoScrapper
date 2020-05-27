@@ -3,9 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 import textwrap
 import json
-# from app import app
-# from app.utils import extract_element, remove_whitespaces
-from utils import extract_element, remove_whitespaces
+from app import app
+from app.utils import extract_element, remove_whitespaces
+# from utils import extract_element, remove_whitespaces
 
 class Product:
     def __init__(self, product_id = None, name = None, opinions = []):
@@ -14,7 +14,7 @@ class Product:
         self.opinions = opinions
     
     def __str__(self):
-        return f'Product id: {self.product_id}\nName: {self.name}\nOpinions:\n'+"\n".join(textwrap.indent(str(opinion),"    ") for opinion in self.opinions)
+        return f'Product id: {self.product_id}\nName: {self.name}\nOpinions:\n'+"\n\n".join(textwrap.indent(str(opinion),"    ") for opinion in self.opinions)
     
     def __dict__(self):
         return {
@@ -56,8 +56,17 @@ class Product:
     
     def save_product(self):
         with open("app/opinions_json/"+self.product_id+'.json', 'w', encoding="utf-8") as fp:
-            json.dump(self.opinions, fp, ensure_ascii=False, indent=4, separators=(',', ': '))
+            json.dump(self.__dict__(), fp, ensure_ascii=False, indent=4, separators=(',', ': '))
 
+    def read_product(self):
+        with open("app/opinions_json/"+self.product_id+'.json', 'r', encoding="utf-8") as fp:
+            pr = json.load(fp)
+        self.name = pr['name']
+        opinions = pr['opinions']
+        for opinion in opinions:
+            op = Opinion(**opinion)
+            self.opinions.append(op)
+            
 class Opinion:
     #słownik z składowymi opinii i ich selektorami
     tags = {
@@ -87,7 +96,7 @@ class Opinion:
         self.review_date = review_date
     
     def __str__(self):
-        return '\n'.join(key+': '+('' if getattr(self,key) is None else getattr(self,key)) for key in self.__dict__().keys())
+        return '\n'.join(key+': '+('' if getattr(self,key) is None else str(getattr(self,key))) for key in self.__dict__().keys())
     
     def __dict__(self):
         features = {key:('' if getattr(self,key) is None else getattr(self,key))
@@ -123,7 +132,3 @@ class Opinion:
         self.useful = int(self.useful)
         self.useless = int(self.useless)
         self.content = remove_whitespaces(self.content)
-
-product = Product("79688141")
-product.extract_product()
-print(product)
