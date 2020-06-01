@@ -11,4 +11,4 @@ class ProductForm(FlaskForm):
             Regexp("^[0-9]+$", message="Kod produktu może zawierać tyko cyfry!")
         ]
     )
-    submit = SubmitField("Pobierz") 
+    submit = SubmitField("Pobierz")

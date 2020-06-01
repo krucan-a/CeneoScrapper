@@ -1,4 +1,4 @@
-  #import bibliotek
+#import bibliotek
 from flask import Flask
 
 #utworzenie obiektu (instancji) klasy Flask reprezentunącego aplikację
