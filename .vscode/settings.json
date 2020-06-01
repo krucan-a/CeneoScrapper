@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "python.pythonPath": "c:\\Users\\andrz\\OneDrive\\Desktop\\ceneoscraper proper\\CeneoScrapper\\.venv\\Scripts\\python.exe"
+=======
+    "python.pythonPath": ".venv\\Scripts\\python.exe"
+>>>>>>> 427421ad4af5d50d5ba6ab5329b98f09db7a0aea
 }
