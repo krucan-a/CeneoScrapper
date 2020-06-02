@@ -54,8 +54,6 @@ def product(id):
         titles=opinions.columns.values 
     )
 
-    pass
-
 @app.route('/products')
 def products():
     pass
